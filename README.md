@@ -1,50 +1,87 @@
-# Simple Calculator 👋
+# Expo Calculator — Native Arithmetic Calculator
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple calculator application built with React Native and Expo. It provides a dark calculator interface with a numeric keypad, arithmetic operator buttons, a display area, and reusable blurred button components.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Numeric keypad (0–9).
+- Basic arithmetic operators: addition, subtraction, multiplication, and division.
+- Clear current display.
+- Delete the last entered character.
+- Evaluate the current expression and display the result.
+- Reusable calculator button component.
+- Dark interface with accent colours and Expo Blur styling.
+- Expo Router application entry point.
 
-   ```bash
-   npm install
-   ```
+## Technology Stack
 
-2. Start the app
+- React Native 0.81
+- React 19
+- Expo SDK 54
+- Expo Router 6
+- TypeScript
+- Expo Blur
+- React Navigation
 
-   ```bash
-   npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+expo-calculator/
+├── app/
+│   └── index.tsx             # Calculator screen and keypad logic
+├── components/
+│   ├── Button.tsx            # Reusable blurred calculator button
+│   └── Footer.tsx
+├── assets/
+├── app.json
+├── eas.json
+├── package.json
+└── tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
+### Prerequisites
+- Node.js and npm
+- Expo Go or an Android/iOS development build
+- Android emulator, iOS simulator, or a physical device
 
-To learn more about developing your project with Expo, look at the following resources:
+### Install
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/sampatakumar/expo-calculator.git
+cd expo-calculator
+npm install
+```
 
-## Join the community
+### Start the app
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Platform-specific commands:
+
+```bash
+npm run android
+npm run ios
+npm run web
+```
+
+## Important Security and Reliability Note
+
+The current calculator evaluates the display expression using JavaScript `eval()`. This is acceptable only as a limited learning prototype with tightly controlled input, and should be replaced with a safe arithmetic expression parser before accepting arbitrary input. Validate operator sequences, division by zero, and invalid expressions.
+
+## Future Improvements
+
+- [ ] Replace `eval()` with a safe expression parser.
+- [ ] Add decimal, sign-change, parentheses, and memory operations.
+- [ ] Add calculation history.
+- [ ] Add keyboard input support on web.
+- [ ] Improve error messages and numeric precision handling.
+- [ ] Add unit tests for expression evaluation.
+- [ ] Add accessibility labels and responsive tablet layouts.
+
+## License
+
+No root license file was identified. Add a license before permitting reuse.
